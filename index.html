@@ -66,13 +66,23 @@
             #contactform fieldset input[type=submit] {
                 float: right;
             }
+
+            .warning {
+                font-size: 15px; 
+                border: 1px solid #bdb569; 
+                background-color: #fef6aa; 
+                color: #8e8c71; 
+                line-height: 1.4em; 
+                padding: 5px 10px;
+                margin-top: 20px;
+            }
         </style>
     </head>
     <body>
         <div id="container">
             <h1>Formularz kontaktowy</h1>
 
-            <form action="form/send.php" method="post" id="contactform">
+            <form action="send.html" method="post" id="contactform">
                 <fieldset>
                     <input type="text" name="contact_name" placeholder="Imię i nazwisko" required="required" tabindex="1" />
                     <input type="email" name="contact_email" placeholder="Adres e-mail" required="required" tabindex="2" />
@@ -80,6 +90,10 @@
                     <input type="submit" value="Wyślij" tabindex="5" />Podaj wynik: <span class="form_check_1"></span> &times; <span class="form_check_2"></span> = <input type="text" name="contact_check" maxlength="2" tabindex="4" />
                     <input type="hidden" name="contact_check_data" value="" />
                 </fieldset>
+
+                <div class="warning">
+                    Nasz serwer do demo nie obsługuje PHP, więc nie sprawdzamy poprawności wpisanego wyniku.
+                </div>
             </form>
         </div>
 

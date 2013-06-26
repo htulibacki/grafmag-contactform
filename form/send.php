@@ -26,17 +26,4 @@ if ($error) {
     exit('nok');
 }
 
-$mail = new PHPMailer();
-
-$mail->CharSet = 'UTF-8';
-
-$mail->SetFrom($_POST['contact_email'], $_POST['contact_name']);
-$mail->AddAddress('h.tulibacki@gmail.com');
-$mail->Subject = 'Wiadomość ze strony internetowej';
-$mail->Body = $_POST['contact_body'];
-
-if (!$mail->Send()) {
-    exit('nok');
-}
-
 exit('ok');

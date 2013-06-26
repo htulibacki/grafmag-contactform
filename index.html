@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Własny formularz kontaktowy</title>
+
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300&amp;subset=latin-ext" rel="stylesheet" />
+        
+        <style>
+            html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+            article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+            body{line-height:1;}
+            ol,ul{list-style:none;}
+            blockquote,q{quotes:none;}
+            blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+            table{border-collapse:collapse;border-spacing:0;}
+            a{text-decoration:none;}
+            input:focus,input:active{outline:none;}
+            textarea:focus,textarea:active{outline:none;}
+            .cf:before,.cf:after{content:" ";display:table;}
+            .cf:after{clear:both;}
+            .ir{border:0;font:0/0 a;text-shadow:none;color:transparent;background-color:transparent;}
+            .ht{position:absolute;top:-10000px;left:-10000px;}
+            .form-success{background-color:#6cbf40;padding:10px;font-size:15px;color:#ffffff;line-height:1.4em;}
+            #contactform{margin-bottom: 30px;}
+            #contactform .form-error{background-color:#ff6600;padding:10px;font-size:15px;color:#ffffff;margin-bottom:15px;line-height:1.4em;}
+            #contactform fieldset{width:100%;}
+            #contactform fieldset label{display:block;font-size:15px;color:#46494f;margin-bottom:12px;}
+            #contactform fieldset input[type=text],
+            #contactform fieldset input[type=email]{font-family:Roboto,sans-serif;color:#acb4bd;font-size:14px;border:1px solid #d8dee5;box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1);padding:9px 14px;width:460px;max-width:100%;box-sizing:border-box;-moz-box-sizing:border-box;height:40px;margin-bottom:10px;}
+            #contactform fieldset input[type=text]:hover,#contactform fieldset input[type=email]:hover{color:#61656d;border-color:#acb4bd;}
+            #contactform fieldset input[type=text]:focus,#contactform fieldset input[type=email]:focus{color:#61656d;border-color:#196abc;}
+            #contactform fieldset textarea{font-family:Roboto,sans-serif;color:#acb4bd;font-size:14px;border:1px solid #d8dee5;box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1);padding:9px 14px;width:460px;max-width:100%;box-sizing:border-box;-moz-box-sizing:border-box;height:160px;margin-bottom:10px;resize:none;}
+            #contactform fieldset textarea:hover{color:#61656d;border-color:#acb4bd;}
+            #contactform fieldset textarea:focus{color:#61656d;border-color:#196abc;}
+            #contactform fieldset .form-field-error{color:#ff6600;font-style:italic;font-size:12px;margin-bottom:15px;margin-top:-5px;line-height:1.3em;}
+            #contactform fieldset input[type=submit]{background:#1969ba;background:-webkit-linear-gradient(top, #1969ba 0%, #13508e 100%);background:linear-gradient(to bottom, #1969ba 0%, #13508e 100%);border:none;font-size:14px;font-family:Roboto,sans-serif;color:#ffffff;cursor:pointer;padding:9px 14px;box-sizing:border-box;-moz-box-sizing:border-box;}
+            #contactform fieldset input[type=submit]:hover{background:#1969ba;background:-webkit-linear-gradient(top, #1969ba 0%, #053565 100%);background:linear-gradient(to bottom, #1969ba 0%, #053565 100%);}
+            #contactform fieldset input[type=submit]:active{background:#053565;background:-webkit-linear-gradient(top, #053565 0%, #1969ba 100%);background:linear-gradient(to bottom, #053565 0%, #1969ba 100%);}
+            #contactform fieldset input[type=hidden]{display:none;}
+
+            #container {
+                width: 460px;
+                margin: 0px auto;
+                font-family: Roboto, sans-serif;
+                color: #46494f;
+            }
+
+            #container h1 {
+                font-family: Roboto, sans-serif;
+                font-size: 36px;
+                padding-top: 10px;
+                margin-bottom: 15px;
+                color: #acb4bd;
+                line-height: 1.2em;
+                font-weight: 300;
+            }
+
+            #contactform fieldset input[name=contact_check] {
+                width: 50px;
+                text-align: center;''
+            }
+
+            #contactform fieldset input[type=submit] {
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Formularz kontaktowy</h1>
+
+            <form action="form/send.php" method="post" id="contactform">
+                <fieldset>
+                    <input type="text" name="contact_name" placeholder="Imię i nazwisko" required="required" tabindex="1" />
+                    <input type="email" name="contact_email" placeholder="Adres e-mail" required="required" tabindex="2" />
+                    <textarea rows="5" columns="10" name="contact_body" placeholder="Treść wiadomości" required="required" tabindex="3"></textarea>
+                    <input type="submit" value="Wyślij" tabindex="5" />Podaj wynik: <span class="form_check_1"></span> &times; <span class="form_check_2"></span> = <input type="text" name="contact_check" maxlength="2" tabindex="4" />
+                    <input type="hidden" name="contact_check_data" value="" />
+                </fieldset>
+            </form>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
